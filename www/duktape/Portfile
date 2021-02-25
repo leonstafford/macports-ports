@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:filetype=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+name                duktape
+version             2.6.0
+revision            1
+categories          www
+license             MIT
+maintainers         ljs.dev:me
+description         Embeddable Javascript engine with a focus on portability and compact footprint  
+
+homepage            https://github.com/svaarala/duktape
+
+distname            ${name}-${version}
+dist_subdir         ${name}
+
+checksums           rmd160  something \
+                    sha256  else \
+                    size    21427772
+
+depends_build-append port:python27 \
+                    port:py27-yaml
+
+fetch.type          git
+git.url             ${homepage}.git
+git.branch          v2.6.0 
+
